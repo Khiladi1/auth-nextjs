@@ -21,15 +21,14 @@ export default function ProfilePage(){
     const getUserDetails = async () => {
         const res = await axios.get('/api/users/me')
         console.log(res.data);
-        setData(res.data.data._id)
+        setData(res.data.data.username)
     }
 
     return(
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <h1>Profile</h1>
             <hr />
-            <p>Profile page</p>
-            <h2>{data === "" ? "nothing" : <Link href={`/profile/${data}`}>{data}</Link> }</h2>
+            <h2>Welcome {data === "" ? "nothing" : <Link href={`/profile/${data}`}>{data}</Link> }</h2>
             <hr />
             <button
             onClick={logout}
