@@ -28,7 +28,10 @@ export default function ProfilePage(){
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <h1>Profile</h1>
             <hr />
-            <h2> {data === "" ? "" : <Link href={`/profile/${data}`}>{"Welcome " + data}</Link> }</h2>
+            <h2 className="text-lg py-2 px-4 rounded-lg bg-blue-500 text-white hover:bg-blue-600 cursor-pointer transition duration-300">
+    {data === "" ? ":-)" : <Link href={`/profile/${data}`}>{"Welcome " + data}</Link>}
+</h2>
+
             <hr />
             <button
             onClick={logout}
